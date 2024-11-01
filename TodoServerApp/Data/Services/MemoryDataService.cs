@@ -1,6 +1,6 @@
 using TodoServerApp.Data.Interfaces;
 
-namespace TodoServerApp.Data
+namespace TodoServerApp.Data.Services
 {
     public class MemoryDataService:IDataService
     {
@@ -9,10 +9,31 @@ namespace TodoServerApp.Data
             new()  {Id = 2, Title = "Задача 2", Description = "Описание задачи 2", CreateDate=DateTime.Now},
             new()  {Id = 3, Title = "Задача 3", Description = "Описание задачи 3", CreateDate=DateTime.Now},
         ];
+
+        public Task DeleteAsync(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<TaskItem>> GetAllAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<TaskItem> GetTaskAsync(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<IEnumerable<TaskItem>> GetTaskItemsAsync()
         {
             await Task.Delay(1000);
             return await Task.FromResult(Tasks);
         } 
+
+        public Task SaveAsync(TaskItem item)
+        {
+            throw new NotImplementedException();
+        }
     }    
 }
